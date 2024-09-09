@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}Главная страница{% endblock %}</title>
+</head>
+<body>
+    <header>
+        <h1>Моя фильмотека</h1>
+    </header>
+
+    <div class="content">
+        {% block content %}
+        {% for film in films %}
+            <p><b>{{ film.name }}</b></p>
+            <p>{{ film.description }}</p>
+            <p>{{ film.date }}</p>
+        {% endfor %}
+    {% endblock %}
+    </div>
+
+    <footer>
+        <p>Все права не защищены</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>film</title>
+</head>
+<body>
+     <div class="content">
+        {% block content %}
+        {% for film in films %}
+            <p><b>{{ film.name }}</b></p>
+            <p>{{ film.description }}</p>
+            <p>{{ film.date }}</p>
+
+             {% for act in film.actors_list %}
+                <p><b>{{ act.name }}</b></p>
+             {% endfor %}
+
+        {% endfor %}
+    {% endblock %}
+    </div>
+</body>
+</html>
